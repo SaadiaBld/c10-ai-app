@@ -1,0 +1,108 @@
+/* Typographie & fond */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 2rem;
+    color: #333;
+}
+
+/* Conteneur principal centré */
+.container {
+    max-width: 700px;
+    margin: auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Titre principal */
+h1 {
+    text-align: center;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+}
+
+/* Label du champ */
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Champ de texte */
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 120px;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+
+textarea:focus {
+    outline: none;
+    border-color: #3182ce;
+}
+
+/* Bouton */
+button {
+    margin-top: 1rem;
+    background-color: #3182ce;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+/* Bloc des résultats */
+.result {
+    margin-top: 2rem;
+    background-color: #ebf4ff;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border-left: 5px solid #4299e1;
+}
+
+.result h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.result ul {
+    list-style: none;
+    padding: 0;
+}
+
+.result li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #dbeafe;
+}
+
+.result li:last-child {
+    border-bottom: none;
+}
+
+/* Message d’erreur */
+.error {
+    color: #e53e3e;
+    background-color: #fff5f5;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border: 1px solid #feb2b2;
+    border-radius: 6px;
+}

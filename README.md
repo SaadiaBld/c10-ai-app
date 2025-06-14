@@ -65,7 +65,7 @@ pip install -r requirements.txt
 
 ## 🔐 Lancer l'application
 
-Assurez-vous que l’API FastAPI est bien lancée sur http://127.0.0.1:8000.
+Assurez-vous que l’API FastAPI est bien lancée sur http://127.0.0.1:5000.
 
 Puis lance l’app Flask :
 ```bash

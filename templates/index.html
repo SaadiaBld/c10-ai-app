@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Analyse de verbatim</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .progress-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 6px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            height: 16px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 6px;
+            background-color: #4caf50;
+            text-align: right;
+            transition: width 0.3s ease;
+        }
+
+        .theme-block {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Analyse de verbatim client</h1>
+        <form method="post">
+            <label for="verbatim">Saisissez un verbatim :</label>
+            <textarea name="verbatim" id="verbatim" required>{{ verbatim or '' }}</textarea>
+            <br>
+            <button type="submit">Analyser</button>
+        </form>
+
+        {% if result %}
+            <div class="result">
+                <h2>Résultat :</h2>
+                {% for theme in result.themes %}
+                    <div class="theme-block">
+                        {% if theme.note <= 2 %}
+                            {% set emoji = "😠" %}
+                        {% elif theme.note <= 3.5 %}
+                            {% set emoji = "😐" %}
+                        {% else %}
+                            {% set emoji = "😊" %}
+                        {% endif %}
+
+                        <p><strong>{{ theme.theme }}</strong> → Note : {{ theme.note }} {{ emoji }}</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: {{ (theme.note / 5 * 100) | round(0, 'floor') }}%;"></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
